@@ -2,6 +2,15 @@ const substitutionModule = (function () {
 
   const aToZ = 'abcdefghijklmnopqrstuvwxyz';
   
+  /**
+   * Replaces each letter of the alphabet with an equally-indexed 
+   * letter from a given substitute alphabet.
+   * 
+   * @param {string} input 
+   * @param {string} alphabet 
+   * @param {boolean} encode 
+   * @returns {string}
+   */
   function substitution(input, alphabet, encode = true) {
     // early return if alphabet undefined or not 26 chars
     if (!alphabet || alphabet.length != 26) return false;

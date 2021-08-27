@@ -2,6 +2,14 @@ const caesarModule = (function () {
 
   const alphabet = 'abcdefghijklmnopqrstuvwxyz';
   
+  /**
+   * Shifts each letter in a string by a specified number of places.
+   * 
+   * @param {string} input - String to mutate
+   * @param {number} shift - Number of places to shift 
+   * @param {boolean} encode - 
+   * @returns {string} 
+   */
   function caesar(input, shift, encode = true) {
     
     // early return if shift value undefined or invalid

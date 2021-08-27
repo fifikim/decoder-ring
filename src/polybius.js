@@ -14,11 +14,22 @@ const polybiusModule = (function () {
     34: 's', 44: 't', 54: 'u', 15: 'v', 25: 'w', 35: 'x', 
     45: 'y', 55: 'z'
   };
-  
+
+  /**
+   * Substitutes each letter in a string with a 
+   * corresponding number pair.
+   * @param {string} input - string to mutate
+   * @param {boolean} encode - set to encode(default) or decode
+   * @returns {string}
+   */
   function polybius(input, encode = true) {
     input = input.toLowerCase(); // treats caps as lowercase
     
-    let key = encodeKey; // sets to encode as default 
+    /**
+     * @type {object} - sets mode to encoding as default
+     */
+    let key = encodeKey; 
+
     let inputArray = input.split('');
     
     if (!encode) { // sets to decode
