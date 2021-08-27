@@ -5,10 +5,10 @@ const caesarModule = (function () {
   /**
    * Shifts each letter in a string by a specified number of places.
    * 
-   * @param {string} input - String to mutate
-   * @param {number} shift - Number of places to shift 
-   * @param {boolean} encode - 
-   * @returns {string} 
+   * @param {string} input - The string to translate
+   * @param {number} shift - The number of places to shift 
+   * @param {boolean} encode - The translation mode
+   * @return {string} - The translated string
    */
   function caesar(input, shift, encode = true) {
     

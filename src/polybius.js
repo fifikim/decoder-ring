@@ -18,9 +18,9 @@ const polybiusModule = (function () {
   /**
    * Substitutes each letter in a string with a 
    * corresponding number pair.
-   * @param {string} input - string to mutate
-   * @param {boolean} encode - set to encode(default) or decode
-   * @returns {string}
+   * @param {string} input - The string to translate
+   * @param {boolean} encode - The translation mode
+   * @return {string} - The translated string
    */
   function polybius(input, encode = true) {
     input = input.toLowerCase(); // treats caps as lowercase

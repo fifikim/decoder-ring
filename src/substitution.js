@@ -6,10 +6,10 @@ const substitutionModule = (function () {
    * Replaces each letter of the alphabet with an equally-indexed 
    * letter from a given substitute alphabet.
    * 
-   * @param {string} input 
-   * @param {string} alphabet 
-   * @param {boolean} encode 
-   * @returns {string}
+   * @param {string} input - The string to translate
+   * @param {string} alphabet - The substitution alphabet
+   * @param {boolean} encode - The translation mode
+   * @returns {string} - The translated string
    */
   function substitution(input, alphabet, encode = true) {
     // early return if alphabet undefined or not 26 chars
