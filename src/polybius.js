@@ -16,17 +16,16 @@ const polybiusModule = (function () {
   };
 
   /**
-   * Substitutes each letter in a string with a 
-   * corresponding number pair.
-   * @param {string} input - The string to translate
-   * @param {boolean} encode - The translation mode
-   * @return {string} - The translated string
+   * Substitutes each letter in a string with a corresponding number pair.
+   * @param {string} input - String to translate
+   * @param {boolean} encode - Translation mode
+   * @return {string} - Translated string
    */
   function polybius(input, encode = true) {
     input = input.toLowerCase(); // treats caps as lowercase
     
     /**
-     * @type {object} - sets mode to encoding as default
+     * @type {object} - sets translation key to encode (default)
      */
     let key = encodeKey; 
 
@@ -36,11 +35,11 @@ const polybiusModule = (function () {
       key = decodeKey; 
       inputArray = [];
       
-      // early return if input excl. spaces has odd length
+      // early return if input excluding spaces has odd length
       let noSpaces = input.split(' ').join('');
       if (noSpaces.length % 2 != 0) return false;
       
-      while (input) { // parses each space or num pair
+      while (input) { // parses each space or number pair
         if (input[0] === ' ') { 
           inputArray.push(' ');
           input = input.slice(1, input.length);
@@ -51,7 +50,7 @@ const polybiusModule = (function () {
       }
     }
     
-    // adds space/encoded num/decoded char to result string
+    // adds space, encoded number pair, or decoded character to result string
     let result = ''; 
     for (let item of inputArray) { 
       item === ' ' ? result += item : result += key[item];

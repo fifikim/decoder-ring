@@ -5,19 +5,19 @@ const caesarModule = (function () {
   /**
    * Shifts each letter in a string by a specified number of places.
    * 
-   * @param {string} input - The string to translate
-   * @param {number} shift - The number of places to shift 
-   * @param {boolean} encode - The translation mode
-   * @return {string} - The translated string
+   * @param {string} input - String to translate
+   * @param {number} shift - Number of places to shift 
+   * @param {boolean} encode - Translation mode
+   * @return {string} - Translated string
    */
   function caesar(input, shift, encode = true) {
     
-    // early return if shift value undefined or invalid
+    // early return if shift value is undefined or invalid
     if (!shift || shift === 0 || shift < -25 || shift > 25) {
       return false;
     };
     
-    if (!encode) shift *= -1; // reverses shift to decode
+    if (!encode) shift *= -1; // reverses shift direction for decoding
     
     let result = '';  
     for (let i = 0; i < input.length; i++) {
@@ -25,18 +25,18 @@ const caesarModule = (function () {
       let char = input[i].toLowerCase(); 
       let index = alphabet.indexOf(char);
       
-      if (index === -1) { // maintains nonalphabetic chars
+      if (index === -1) { // maintains nonalphabetic characters
         result += char;
         continue;
       } 
       
-      let newIndex = index + shift; // shifts index 
+      let newIndex = index + shift; // finds index at shifted value
       
       // shifts out-of-range index to valid index
       if (newIndex < 0) newIndex += 26;
       if (newIndex > 25) newIndex %= 26;
 
-      // adds shifted char to result string
+      // adds shifted character to result string
       let newChar = alphabet.charAt(newIndex);
       result += newChar;
     }
